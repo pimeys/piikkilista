@@ -1,0 +1,21 @@
+%h1#notice
+
+%form
+  .hidden
+    %input#sales{:type => 'text'}
+
+:javascript
+  var timeout;
+
+  function printCode() {
+    $('h1#notice').html('Ostit tuotteen koodilla: ' + $('#sales').val());
+  }
+
+  $(document).ready(function() {
+    $('#sales').focus();
+
+    $('#sales').keyup(function(e) {
+      clearTimeout(timeout);
+      timeout = setTimeout('printCode()', 500);
+    });
+  });

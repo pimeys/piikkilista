@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+.hidden {
+  width: 0;
+  overflow: hidden;
+}
